@@ -21,5 +21,15 @@ namespace NgoPhuongLinh_2122110486
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
