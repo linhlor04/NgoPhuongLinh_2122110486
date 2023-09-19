@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NgoPhuongLinh_2122110486
 {
-    public partial class Form1 : Form
+    public partial class QuanLySinhVien : Form
     {
-        public Form1()
+        public QuanLySinhVien()
         {
             InitializeComponent();
         }
@@ -55,7 +55,14 @@ namespace NgoPhuongLinh_2122110486
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string user = txtUserName.Text;
+            string date = dtpDate.Text;
+            string faculty = cbFaculty.Text;
+            string gender = gbGender.Text;
 
+
+            richtbStatus.Text = "UserName: " + user + "\nDate: " + date + "\nFaculty: " + faculty + "\nGender: " + gender;
+           
         }
 
         private void cbFaculty_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,11 +72,13 @@ namespace NgoPhuongLinh_2122110486
 
         private void richtbStatus_TextChanged(object sender, EventArgs e)
         {
-            string user = txtUserName.Text;
-            string date = dtpDate.Text;
-            string faculty = cbFaculty.Text;
-            string gender = gbGender.Text;
 
+
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
