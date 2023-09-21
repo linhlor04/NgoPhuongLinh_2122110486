@@ -16,7 +16,7 @@ namespace NgoPhuongLinh_2122110486
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new Menu());
         }
     }
 }
