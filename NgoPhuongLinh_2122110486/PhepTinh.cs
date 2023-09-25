@@ -35,23 +35,36 @@ namespace NgoPhuongLinh_2122110486
         }
         private void btCong_Click(object sender, EventArgs e)
         {
-            if (tbSoX.Text=="" && tbSoY.Text=="")
+            if (tbSoX.Text == "" && tbSoY.Text == "")
             {
                 MessageBox.Show("Pls enter ur number!");
             }
-            int x = int.Parse(tbSoX.Text);
-            int y = int.Parse(tbSoY.Text);
-            int kq = x + y;
-            tbKQ.Text = kq.ToString();
+            else
+            {
+                double x = Convert.ToDouble(tbSoX.Text);
+                double y = Convert.ToDouble(tbSoY.Text);
+                double kq = x + y;
+                tbKQ.Text = kq.ToString();
+            }    
+
         }
 
         private void btNhan_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(tbSoX.Text);
-            int y = int.Parse(tbSoY.Text);
-            int kq = x * y;
-            tbKQ.Text = kq.ToString();
+            if (tbSoX.Text == "" && tbSoY.Text == "")
+            {
+                MessageBox.Show("Pls enter ur number!");
+            }
+            else
+            {
+                double x = Convert.ToDouble(tbSoX.Text);
+                double y = Convert.ToDouble(tbSoY.Text);
+                double kq = x * y;
+                tbKQ.Text = kq.ToString();
+            }
+
         }
+
 
         private void btExit_Click(object sender, EventArgs e)
         {
