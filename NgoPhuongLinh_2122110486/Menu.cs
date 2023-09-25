@@ -28,5 +28,21 @@ namespace NgoPhuongLinh_2122110486
             QuanLySinhVien qlsv = new QuanLySinhVien();
             qlsv.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPheptinh_Click(object sender, EventArgs e)
+        {
+            PhepTinh phepTinh = new PhepTinh();
+            phepTinh.ShowDialog();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

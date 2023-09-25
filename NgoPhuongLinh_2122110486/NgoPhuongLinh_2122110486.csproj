@@ -52,6 +52,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhepTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhepTinh.Designer.cs">
+      <DependentUpon>PhepTinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhepTinh.resx">
+      <DependentUpon>PhepTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySinhVien.resx">
       <DependentUpon>QuanLySinhVien.cs</DependentUpon>

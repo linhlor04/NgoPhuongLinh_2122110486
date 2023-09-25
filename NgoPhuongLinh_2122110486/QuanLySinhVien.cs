@@ -78,7 +78,7 @@ namespace NgoPhuongLinh_2122110486
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }
