@@ -39,9 +39,9 @@ namespace NgoPhuongLinh_2122110486
             {
                 MessageBox.Show("Pls enter ur number!");
             }
-            double x = Convert.ToDouble(tbSoX.Text);
-            double y = Convert.ToDouble(tbSoY.Text);
-            double kq = x + y;
+            int x = int.Parse(tbSoX.Text);
+            int y = int.Parse(tbSoY.Text);
+            int kq = x + y;
             tbKQ.Text = kq.ToString();
         }
 
