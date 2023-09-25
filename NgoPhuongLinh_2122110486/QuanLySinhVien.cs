@@ -16,13 +16,6 @@ namespace NgoPhuongLinh_2122110486
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -32,12 +25,6 @@ namespace NgoPhuongLinh_2122110486
         {
 
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -73,12 +60,8 @@ namespace NgoPhuongLinh_2122110486
         private void richtbStatus_TextChanged(object sender, EventArgs e)
         {
 
-
         }
 
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
