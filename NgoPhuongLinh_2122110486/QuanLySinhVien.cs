@@ -42,13 +42,6 @@ namespace NgoPhuongLinh_2122110486
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = txtUserName.Text;
-            string date = dtpDate.Text;
-            string faculty = cbFaculty.Text;
-            string gender = gbGender.Text;
-
-
-            richtbStatus.Text = "UserName: " + user + "\nDate: " + date + "\nFaculty: " + faculty + "\nGender: " + gender;
            
         }
 
@@ -61,7 +54,4 @@ namespace NgoPhuongLinh_2122110486
         {
 
         }
-
-        }
     }
-}
