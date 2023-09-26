@@ -24,7 +24,7 @@ namespace NgoPhuongLinh_2122110486
         }
 
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)  //Menu
         {
 
         }
@@ -34,10 +34,16 @@ namespace NgoPhuongLinh_2122110486
             PhepTinh phepTinh = new PhepTinh();
             phepTinh.ShowDialog();
         }
-
+        private void btQLSV_Click(object sender, EventArgs e)
+        {
+            QuanLySinhVien qlsv = new QuanLySinhVien();
+            qlsv.ShowDialog();
+        }
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
     }
 }
