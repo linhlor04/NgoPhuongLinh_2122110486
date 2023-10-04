@@ -55,5 +55,11 @@ namespace NgoPhuongLinh_2122110486
             QuanLyNhanSu qlns =  new QuanLyNhanSu();
             qlns.ShowDialog();
         }
+
+        private void btDSQLSV_Click(object sender, EventArgs e)
+        {
+            DanhsachQLSV dsqlsv = new DanhsachQLSV();
+            dsqlsv.ShowDialog();
+        }
     }
 }

@@ -35,6 +35,7 @@
             this.btQLSV = new System.Windows.Forms.Button();
             this.btMayTinh = new System.Windows.Forms.Button();
             this.btQLNS = new System.Windows.Forms.Button();
+            this.btDSQLSV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -107,11 +108,22 @@
             this.btQLNS.UseVisualStyleBackColor = true;
             this.btQLNS.Click += new System.EventHandler(this.btQLNS_Click);
             // 
+            // btDSQLSV
+            // 
+            this.btDSQLSV.Location = new System.Drawing.Point(572, 215);
+            this.btDSQLSV.Name = "btDSQLSV";
+            this.btDSQLSV.Size = new System.Drawing.Size(168, 72);
+            this.btDSQLSV.TabIndex = 10;
+            this.btDSQLSV.Text = "DanhsachQLSV";
+            this.btDSQLSV.UseVisualStyleBackColor = true;
+            this.btDSQLSV.Click += new System.EventHandler(this.btDSQLSV_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 449);
+            this.Controls.Add(this.btDSQLSV);
             this.Controls.Add(this.btQLNS);
             this.Controls.Add(this.btMayTinh);
             this.Controls.Add(this.btQLSV);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btQLSV;
         private System.Windows.Forms.Button btMayTinh;
         private System.Windows.Forms.Button btQLNS;
+        private System.Windows.Forms.Button btDSQLSV;
     }
 }
