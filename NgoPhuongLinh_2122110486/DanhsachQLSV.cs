@@ -51,7 +51,7 @@ using System.Windows.Forms;
 namespace NgoPhuongLinh_2122110486
 {
     public partial class DanhsachQLSV : Form
-    {  
+    {
         //tạo danh sách chứa id đã nhập 
         private List<string> usedIDs = new List<string>();
 
@@ -114,5 +114,45 @@ namespace NgoPhuongLinh_2122110486
         {
             this.Close();
         }
+
+        private void btChoose_Click(object sender, EventArgs e)
+        {
+            pbImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Open Image";
+            dlg.Filter = "JPEG files (*.jpg)|*.jpg";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                pbImg.ImageLocation = dlg.FileName;
+            }
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to delete them all? Select \"No\" if you want to delete the selected row", "Notice", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                //xóa tất cả
+                dataGridView1.Rows.Clear();
+            }
+            else if (result == DialogResult.No)
+            {
+                //Xóa hàng đã chọn
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    {
+                        dataGridView1.Rows.Remove(row);
+                    }
+                }
+            }
+        }
+
+
     }
 }
+
