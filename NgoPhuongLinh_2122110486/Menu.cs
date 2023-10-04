@@ -49,5 +49,11 @@ namespace NgoPhuongLinh_2122110486
             MayTinh mt = new MayTinh();
             mt.ShowDialog();
         }
+
+        private void btQLNS_Click(object sender, EventArgs e)
+        {
+            QuanLyNhanSu qlns =  new QuanLyNhanSu();
+            qlns.ShowDialog();
+        }
     }
 }

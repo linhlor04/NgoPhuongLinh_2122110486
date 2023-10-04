@@ -34,6 +34,7 @@
             this.btExit = new System.Windows.Forms.Button();
             this.btQLSV = new System.Windows.Forms.Button();
             this.btMayTinh = new System.Windows.Forms.Button();
+            this.btQLNS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,11 +97,22 @@
             this.btMayTinh.UseVisualStyleBackColor = true;
             this.btMayTinh.Click += new System.EventHandler(this.btMayTinh_Click);
             // 
+            // btQLNS
+            // 
+            this.btQLNS.Location = new System.Drawing.Point(323, 215);
+            this.btQLNS.Name = "btQLNS";
+            this.btQLNS.Size = new System.Drawing.Size(168, 72);
+            this.btQLNS.TabIndex = 9;
+            this.btQLNS.Text = "QuanLyNhanSu";
+            this.btQLNS.UseVisualStyleBackColor = true;
+            this.btQLNS.Click += new System.EventHandler(this.btQLNS_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 449);
+            this.Controls.Add(this.btQLNS);
             this.Controls.Add(this.btMayTinh);
             this.Controls.Add(this.btQLSV);
             this.Controls.Add(this.btExit);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btQLSV;
         private System.Windows.Forms.Button btMayTinh;
+        private System.Windows.Forms.Button btQLNS;
     }
 }
