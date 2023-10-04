@@ -33,6 +33,7 @@
             this.btPheptinh = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btQLSV = new System.Windows.Forms.Button();
+            this.btMayTinh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +68,7 @@
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(314, 286);
+            this.btExit.Location = new System.Drawing.Point(313, 365);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(168, 72);
             this.btExit.TabIndex = 6;
@@ -85,11 +86,22 @@
             this.btQLSV.UseVisualStyleBackColor = true;
             this.btQLSV.Click += new System.EventHandler(this.btQLSV_Click);
             // 
+            // btMayTinh
+            // 
+            this.btMayTinh.Location = new System.Drawing.Point(62, 215);
+            this.btMayTinh.Name = "btMayTinh";
+            this.btMayTinh.Size = new System.Drawing.Size(168, 72);
+            this.btMayTinh.TabIndex = 8;
+            this.btMayTinh.Text = "MayTinh";
+            this.btMayTinh.UseVisualStyleBackColor = true;
+            this.btMayTinh.Click += new System.EventHandler(this.btMayTinh_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 449);
+            this.Controls.Add(this.btMayTinh);
             this.Controls.Add(this.btQLSV);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btPheptinh);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button btPheptinh;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btQLSV;
+        private System.Windows.Forms.Button btMayTinh;
     }
 }

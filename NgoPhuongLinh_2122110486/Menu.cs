@@ -44,6 +44,10 @@ namespace NgoPhuongLinh_2122110486
             this.Close();
         }
 
-
+        private void btMayTinh_Click(object sender, EventArgs e)
+        {
+            MayTinh mt = new MayTinh();
+            mt.ShowDialog();
+        }
     }
 }
