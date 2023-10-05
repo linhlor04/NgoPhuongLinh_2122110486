@@ -133,9 +133,6 @@ namespace NgoPhuongLinh_2122110486
         }
         private void btDel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to delete them all? Select \"No\" if you want to delete the selected row", "Notice", MessageBoxButtons.YesNoCancel);
-            if (result == DialogResult.Yes)
-            {
                 //xóa tất cả
                 dataGridView1.Rows.Clear();
             }
@@ -150,7 +147,6 @@ namespace NgoPhuongLinh_2122110486
                     }
                 }
             }
-        }
 
 
     }
