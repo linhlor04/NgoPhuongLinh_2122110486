@@ -31,9 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pbImg = new System.Windows.Forms.PictureBox();
             this.btChoose = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,13 +62,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 26);
             this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(190, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(256, 26);
-            this.textBox2.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pbImg
             // 
@@ -88,11 +83,29 @@
             this.btChoose.UseVisualStyleBackColor = true;
             this.btChoose.Click += new System.EventHandler(this.btChoose_Click);
             // 
+            // btDel
+            // 
+            this.btDel.Location = new System.Drawing.Point(498, 321);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(132, 76);
+            this.btDel.TabIndex = 6;
+            this.btDel.Text = "Delete";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(190, 131);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(256, 26);
+            this.textBox2.TabIndex = 3;
+            // 
             // QuanLyNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 518);
+            this.Controls.Add(this.btDel);
             this.Controls.Add(this.btChoose);
             this.Controls.Add(this.pbImg);
             this.Controls.Add(this.textBox2);
@@ -112,8 +125,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pbImg;
         private System.Windows.Forms.Button btChoose;
+        private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -35,5 +35,17 @@ namespace NgoPhuongLinh_2122110486
         {
 
         }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            pbImg.Image = null;
+            textBox1.Clear();
+            textBox2.Clear();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

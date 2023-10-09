@@ -74,20 +74,20 @@ namespace NgoPhuongLinh_2122110486
 
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(user) || string.IsNullOrEmpty(faculty))
             {
-                MessageBox.Show("Please enter your data");
+                MessageBox.Show("Vui lòng nhập thông tin của b");
                 return;
             }
 
             //kiểm tra có khác số hay không
             if (!IsNumeric(id))
             {
-                MessageBox.Show("ID must be a number.");
+                MessageBox.Show("ID phải là số.");
                 return;
             }
             //kiểm tra id đã tồn tại hay chưa
             if (usedIDs.Contains(id))
             {
-                MessageBox.Show("ID is already in use.");
+                MessageBox.Show("ID đã tồn tại.");
                 return;
             }
 
@@ -95,7 +95,7 @@ namespace NgoPhuongLinh_2122110486
             usedIDs.Add(id);
 
             dataGridView1.Rows.Add(id, user, date, gender, faculty);
-            MessageBox.Show("Added successfully");
+            MessageBox.Show("Thêm thành công");
         }
 
 
@@ -108,6 +108,7 @@ namespace NgoPhuongLinh_2122110486
         {
             txtID.Clear();
             txtUser.Clear();
+            pbImg.Image = null;
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -129,24 +130,64 @@ namespace NgoPhuongLinh_2122110486
 
         private void btEdit_Click(object sender, EventArgs e)
         {
+            string id = txtID.Text;
+            string user = txtUser.Text;
+            DateTime date = dtpDate.Value;
+            string faculty = cbbFaculty.Text;
+            string gender = rbMale.Checked ? "Male" : "Female";
 
-        }
-        private void btDel_Click(object sender, EventArgs e)
-        {
-                //xóa tất cả
-                dataGridView1.Rows.Clear();
-            }
-            else if (result == DialogResult.No)
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(user) || string.IsNullOrEmpty(faculty))
             {
-                //Xóa hàng đã chọn
-                if (dataGridView1.SelectedRows.Count > 0)
+                MessageBox.Show("Vui lòng nhập thông tin của bạn!");
+                return;
+            }
+            if (!IsNumeric(id))
+            {
+                MessageBox.Show("ID phải là số!.");
+                return;
+            }
+
+            bool idFound = false;
+            // tìm id trùng với idFound cần edit thông tin
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["ColumnID"].Value != null && row.Cells["ColumnID"].Value.ToString() == id)
                 {
-                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                    {
-                        dataGridView1.Rows.Remove(row);
-                    }
+                    //edit lại thông tin của id đó
+                    row.Cells["ColumnUser"].Value = user;
+                    row.Cells["ColumnDate"].Value = date;
+                    row.Cells["ColumnGender"].Value = gender;
+                    row.Cells["ColumnFaculty"].Value = faculty;
+
+                    idFound = true;
                 }
             }
+
+            if (idFound)
+                MessageBox.Show("Cập nhật thành công");
+            else
+                MessageBox.Show("ID cần chỉnh sửa không tồn tại.");
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            //xóa tất cả
+            //dataGridView1.Rows.Clear();
+
+            //Xóa hàng đã chọn
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    //lấy id từ hàng đã chọn
+                    string idToDelete = row.Cells["ColumnID"].Value.ToString();
+                    dataGridView1.Rows.Remove(row);
+                    //xóa id đó 
+                    usedIDs.Remove(idToDelete);
+                }
+            }
+            pbImg.Image = null;
+        }
     }
 }
 

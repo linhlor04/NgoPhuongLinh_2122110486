@@ -158,7 +158,7 @@
             this.ColumnDate,
             this.ColumnGender,
             this.ColumnFaculty});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 440);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 399);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -214,7 +214,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(295, 666);
+            this.btAdd.Location = new System.Drawing.Point(284, 619);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(107, 50);
             this.btAdd.TabIndex = 25;
@@ -224,7 +224,7 @@
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(420, 666);
+            this.btEdit.Location = new System.Drawing.Point(409, 619);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(107, 50);
             this.btEdit.TabIndex = 26;
@@ -234,7 +234,7 @@
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(806, 666);
+            this.btExit.Location = new System.Drawing.Point(795, 619);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(107, 50);
             this.btExit.TabIndex = 27;
@@ -244,7 +244,7 @@
             // 
             // btClear
             // 
-            this.btClear.Location = new System.Drawing.Point(551, 666);
+            this.btClear.Location = new System.Drawing.Point(540, 619);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(107, 50);
             this.btClear.TabIndex = 28;
@@ -262,7 +262,7 @@
             // 
             // btChoose
             // 
-            this.btChoose.Location = new System.Drawing.Point(806, 52);
+            this.btChoose.Location = new System.Drawing.Point(795, 37);
             this.btChoose.Name = "btChoose";
             this.btChoose.Size = new System.Drawing.Size(107, 110);
             this.btChoose.TabIndex = 30;
@@ -272,7 +272,7 @@
             // 
             // btDel
             // 
-            this.btDel.Location = new System.Drawing.Point(679, 666);
+            this.btDel.Location = new System.Drawing.Point(668, 619);
             this.btDel.Name = "btDel";
             this.btDel.Size = new System.Drawing.Size(107, 50);
             this.btDel.TabIndex = 31;
