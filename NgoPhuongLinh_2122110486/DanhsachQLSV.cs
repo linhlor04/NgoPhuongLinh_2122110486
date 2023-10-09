@@ -8,45 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//namespace NgoPhuongLinh_2122110486
-//{
-//    public partial class DanhsachQLSV : Form
-//    {
-//        public DanhsachQLSV()
-//        {
-//            InitializeComponent();
-//        }
-
-//        private void btAdd_Click(object sender, EventArgs e)
-//        {
-//            string id = txtID.Text;
-//            string user = txtUser.Text;
-//            DateTime date = dtpDate.Value;
-//            string faculty = cbbFaculty.Text;
-//            string gender = rbMale.Checked ? "Male" : "Female";
-//            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(user) || string.IsNullOrEmpty(faculty))
-//            {
-//                MessageBox.Show("Please enter your data");
-//            }
-//            else
-//            {
-//                dataGridView1.Rows.Add(id, user, date, gender, faculty);
-//                MessageBox.Show("Added successfully");
-//                dataGridView1.Text = "ID: " + id +
-//                                     "UserName: " + user +
-//                                     "\nDate: " + date +
-//                                     "\nGender: " + gender +
-//                                     "\nFaculty: " + faculty;
-//            }
-
-//        }
-
-//        private void txtID_TextChanged(object sender, EventArgs e)
-//        {
-
-//        }
-//    }
-//}
 
 namespace NgoPhuongLinh_2122110486
 {
@@ -171,8 +132,6 @@ namespace NgoPhuongLinh_2122110486
 
         private void btDel_Click(object sender, EventArgs e)
         {
-            //xóa tất cả
-            //dataGridView1.Rows.Clear();
 
             //Xóa hàng đã chọn
             if (dataGridView1.SelectedRows.Count > 0)
