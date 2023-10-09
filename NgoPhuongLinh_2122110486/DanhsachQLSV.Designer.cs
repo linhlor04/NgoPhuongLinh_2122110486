@@ -38,11 +38,6 @@
             this.lbDate = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFaculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.btAdd = new System.Windows.Forms.Button();
@@ -52,6 +47,18 @@
             this.pbImg = new System.Windows.Forms.PictureBox();
             this.btChoose = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
+            this.lbPhone = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFaculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
@@ -68,7 +75,7 @@
             "Bridge System Engineer",
             "App developer",
             "Game developer"});
-            this.cbbFaculty.Location = new System.Drawing.Point(165, 341);
+            this.cbbFaculty.Location = new System.Drawing.Point(648, 37);
             this.cbbFaculty.Name = "cbbFaculty";
             this.cbbFaculty.Size = new System.Drawing.Size(317, 28);
             this.cbbFaculty.TabIndex = 21;
@@ -76,7 +83,7 @@
             // lbFaculty
             // 
             this.lbFaculty.AutoSize = true;
-            this.lbFaculty.Location = new System.Drawing.Point(53, 341);
+            this.lbFaculty.Location = new System.Drawing.Point(547, 40);
             this.lbFaculty.Name = "lbFaculty";
             this.lbFaculty.Size = new System.Drawing.Size(60, 20);
             this.lbFaculty.TabIndex = 20;
@@ -150,6 +157,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -157,13 +166,139 @@
             this.ColumnUser,
             this.ColumnDate,
             this.ColumnGender,
-            this.ColumnFaculty});
+            this.ColumnFaculty,
+            this.ColumnPhone,
+            this.ColumnAddress,
+            this.ColumnImg});
             this.dataGridView1.Location = new System.Drawing.Point(32, 399);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(871, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(1080, 188);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(165, 37);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(317, 26);
+            this.txtID.TabIndex = 24;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(53, 43);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(26, 20);
+            this.lbId.TabIndex = 23;
+            this.lbId.Text = "ID";
+            // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(495, 610);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(107, 50);
+            this.btAdd.TabIndex = 25;
+            this.btAdd.Text = "Add";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Location = new System.Drawing.Point(620, 610);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(107, 50);
+            this.btEdit.TabIndex = 26;
+            this.btEdit.Text = "Edit";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // btExit
+            // 
+            this.btExit.Location = new System.Drawing.Point(1006, 610);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(107, 50);
+            this.btExit.TabIndex = 27;
+            this.btExit.Text = "Exit";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // btClear
+            // 
+            this.btClear.Location = new System.Drawing.Point(751, 610);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(107, 50);
+            this.btClear.TabIndex = 28;
+            this.btClear.Text = "Clear";
+            this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
+            // 
+            // pbImg
+            // 
+            this.pbImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImg.Location = new System.Drawing.Point(648, 193);
+            this.pbImg.Name = "pbImg";
+            this.pbImg.Size = new System.Drawing.Size(317, 191);
+            this.pbImg.TabIndex = 29;
+            this.pbImg.TabStop = false;
+            // 
+            // btChoose
+            // 
+            this.btChoose.Location = new System.Drawing.Point(1019, 222);
+            this.btChoose.Name = "btChoose";
+            this.btChoose.Size = new System.Drawing.Size(93, 80);
+            this.btChoose.TabIndex = 30;
+            this.btChoose.Text = "Choose";
+            this.btChoose.UseVisualStyleBackColor = true;
+            this.btChoose.Click += new System.EventHandler(this.btChoose_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Location = new System.Drawing.Point(879, 610);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(107, 50);
+            this.btDel.TabIndex = 31;
+            this.btDel.Text = "Delete";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.AutoSize = true;
+            this.lbPhone.Location = new System.Drawing.Point(547, 97);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(55, 20);
+            this.lbPhone.TabIndex = 32;
+            this.lbPhone.Text = "Phone";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Location = new System.Drawing.Point(547, 158);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(68, 20);
+            this.lbAddress.TabIndex = 34;
+            this.lbAddress.Text = "Address";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(648, 90);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(317, 26);
+            this.tbPhone.TabIndex = 35;
+            this.tbPhone.TextChanged += new System.EventHandler(this.tbPhone_TextChanged);
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Location = new System.Drawing.Point(648, 149);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(317, 26);
+            this.tbAddress.TabIndex = 36;
+            this.tbAddress.TextChanged += new System.EventHandler(this.tbAddress_TextChanged);
             // 
             // ColumnID
             // 
@@ -195,96 +330,33 @@
             this.ColumnFaculty.MinimumWidth = 8;
             this.ColumnFaculty.Name = "ColumnFaculty";
             // 
-            // txtID
+            // ColumnPhone
             // 
-            this.txtID.Location = new System.Drawing.Point(165, 37);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(317, 26);
-            this.txtID.TabIndex = 24;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.ColumnPhone.HeaderText = "Phone";
+            this.ColumnPhone.MinimumWidth = 8;
+            this.ColumnPhone.Name = "ColumnPhone";
             // 
-            // lbId
+            // ColumnAddress
             // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(53, 43);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(26, 20);
-            this.lbId.TabIndex = 23;
-            this.lbId.Text = "ID";
+            this.ColumnAddress.HeaderText = "Address";
+            this.ColumnAddress.MinimumWidth = 8;
+            this.ColumnAddress.Name = "ColumnAddress";
             // 
-            // btAdd
+            // ColumnImg
             // 
-            this.btAdd.Location = new System.Drawing.Point(284, 619);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(107, 50);
-            this.btAdd.TabIndex = 25;
-            this.btAdd.Text = "Add";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
-            // btEdit
-            // 
-            this.btEdit.Location = new System.Drawing.Point(409, 619);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(107, 50);
-            this.btEdit.TabIndex = 26;
-            this.btEdit.Text = "Edit";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // btExit
-            // 
-            this.btExit.Location = new System.Drawing.Point(795, 619);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(107, 50);
-            this.btExit.TabIndex = 27;
-            this.btExit.Text = "Exit";
-            this.btExit.UseVisualStyleBackColor = true;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // btClear
-            // 
-            this.btClear.Location = new System.Drawing.Point(540, 619);
-            this.btClear.Name = "btClear";
-            this.btClear.Size = new System.Drawing.Size(107, 50);
-            this.btClear.TabIndex = 28;
-            this.btClear.Text = "Clear";
-            this.btClear.UseVisualStyleBackColor = true;
-            this.btClear.Click += new System.EventHandler(this.btClear_Click);
-            // 
-            // pbImg
-            // 
-            this.pbImg.Location = new System.Drawing.Point(518, 37);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(252, 275);
-            this.pbImg.TabIndex = 29;
-            this.pbImg.TabStop = false;
-            // 
-            // btChoose
-            // 
-            this.btChoose.Location = new System.Drawing.Point(795, 37);
-            this.btChoose.Name = "btChoose";
-            this.btChoose.Size = new System.Drawing.Size(107, 110);
-            this.btChoose.TabIndex = 30;
-            this.btChoose.Text = "Choose";
-            this.btChoose.UseVisualStyleBackColor = true;
-            this.btChoose.Click += new System.EventHandler(this.btChoose_Click);
-            // 
-            // btDel
-            // 
-            this.btDel.Location = new System.Drawing.Point(668, 619);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(107, 50);
-            this.btDel.TabIndex = 31;
-            this.btDel.Text = "Delete";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            this.ColumnImg.HeaderText = "Image";
+            this.ColumnImg.MinimumWidth = 8;
+            this.ColumnImg.Name = "ColumnImg";
             // 
             // DanhsachQLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 806);
+            this.ClientSize = new System.Drawing.Size(1356, 806);
+            this.Controls.Add(this.tbAddress);
+            this.Controls.Add(this.tbPhone);
+            this.Controls.Add(this.lbAddress);
+            this.Controls.Add(this.lbPhone);
             this.Controls.Add(this.btDel);
             this.Controls.Add(this.btChoose);
             this.Controls.Add(this.pbImg);
@@ -329,15 +401,22 @@
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFaculty;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.PictureBox pbImg;
         private System.Windows.Forms.Button btChoose;
         private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.Label lbPhone;
+        private System.Windows.Forms.Label lbAddress;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFaculty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnImg;
     }
 }
