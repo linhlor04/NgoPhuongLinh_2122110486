@@ -41,18 +41,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 45);
+            this.label1.Location = new System.Drawing.Point(248, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Menu";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btDN
             // 
-            this.btDN.Location = new System.Drawing.Point(62, 108);
+            this.btDN.Location = new System.Drawing.Point(41, 70);
+            this.btDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btDN.Name = "btDN";
-            this.btDN.Size = new System.Drawing.Size(168, 72);
+            this.btDN.Size = new System.Drawing.Size(112, 47);
             this.btDN.TabIndex = 4;
             this.btDN.Text = "DangNhap";
             this.btDN.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // btPheptinh
             // 
-            this.btPheptinh.Location = new System.Drawing.Point(572, 108);
+            this.btPheptinh.Location = new System.Drawing.Point(381, 70);
+            this.btPheptinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btPheptinh.Name = "btPheptinh";
-            this.btPheptinh.Size = new System.Drawing.Size(168, 72);
+            this.btPheptinh.Size = new System.Drawing.Size(112, 47);
             this.btPheptinh.TabIndex = 5;
             this.btPheptinh.Text = "PhepTinh";
             this.btPheptinh.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(313, 365);
+            this.btExit.Location = new System.Drawing.Point(215, 234);
+            this.btExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(168, 72);
+            this.btExit.Size = new System.Drawing.Size(112, 47);
             this.btExit.TabIndex = 6;
             this.btExit.Text = "Thoát";
             this.btExit.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btQLSV
             // 
-            this.btQLSV.Location = new System.Drawing.Point(323, 108);
+            this.btQLSV.Location = new System.Drawing.Point(215, 70);
+            this.btQLSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btQLSV.Name = "btQLSV";
-            this.btQLSV.Size = new System.Drawing.Size(168, 72);
+            this.btQLSV.Size = new System.Drawing.Size(112, 47);
             this.btQLSV.TabIndex = 7;
             this.btQLSV.Text = "QuanLySinhVien";
             this.btQLSV.UseVisualStyleBackColor = true;
@@ -90,9 +95,10 @@
             // 
             // btMayTinh
             // 
-            this.btMayTinh.Location = new System.Drawing.Point(62, 215);
+            this.btMayTinh.Location = new System.Drawing.Point(41, 140);
+            this.btMayTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btMayTinh.Name = "btMayTinh";
-            this.btMayTinh.Size = new System.Drawing.Size(168, 72);
+            this.btMayTinh.Size = new System.Drawing.Size(112, 47);
             this.btMayTinh.TabIndex = 8;
             this.btMayTinh.Text = "MayTinh";
             this.btMayTinh.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // 
             // btQLNS
             // 
-            this.btQLNS.Location = new System.Drawing.Point(323, 215);
+            this.btQLNS.Location = new System.Drawing.Point(215, 140);
+            this.btQLNS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btQLNS.Name = "btQLNS";
-            this.btQLNS.Size = new System.Drawing.Size(168, 72);
+            this.btQLNS.Size = new System.Drawing.Size(112, 47);
             this.btQLNS.TabIndex = 9;
             this.btQLNS.Text = "QuanLyNhanSu";
             this.btQLNS.UseVisualStyleBackColor = true;
@@ -110,9 +117,10 @@
             // 
             // btDSQLSV
             // 
-            this.btDSQLSV.Location = new System.Drawing.Point(572, 215);
+            this.btDSQLSV.Location = new System.Drawing.Point(381, 140);
+            this.btDSQLSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btDSQLSV.Name = "btDSQLSV";
-            this.btDSQLSV.Size = new System.Drawing.Size(168, 72);
+            this.btDSQLSV.Size = new System.Drawing.Size(112, 47);
             this.btDSQLSV.TabIndex = 10;
             this.btDSQLSV.Text = "DanhsachQLSV";
             this.btDSQLSV.UseVisualStyleBackColor = true;
@@ -120,9 +128,9 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 449);
+            this.ClientSize = new System.Drawing.Size(543, 292);
             this.Controls.Add(this.btDSQLSV);
             this.Controls.Add(this.btQLNS);
             this.Controls.Add(this.btMayTinh);
@@ -131,6 +139,7 @@
             this.Controls.Add(this.btPheptinh);
             this.Controls.Add(this.btDN);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);

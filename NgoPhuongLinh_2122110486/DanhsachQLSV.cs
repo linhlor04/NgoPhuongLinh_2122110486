@@ -60,6 +60,7 @@ namespace NgoPhuongLinh_2122110486
                 MessageBox.Show("ID already exists.");
                 return;
             }
+  
 
             //thêm id mới vào danh sách để kiểm tra
             usedIDs.Add(id);
@@ -103,6 +104,49 @@ namespace NgoPhuongLinh_2122110486
             }
         }
 
+        //private void btEdit_Click(object sender, EventArgs e)
+        //{
+        //    string id = txtID.Text;
+        //    string user = txtUser.Text;
+        //    DateTime date = dtpDate.Value;
+        //    string faculty = cbbFaculty.Text;
+        //    string gender = rbMale.Checked ? "Male" : "Female";
+
+
+        //    if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(user) || string.IsNullOrEmpty(faculty))
+        //    {
+        //        MessageBox.Show("There is no data to edit!");
+        //        return;
+        //    }
+        //    if (!IsNumeric(id))
+        //    {    
+        //        MessageBox.Show("Please enter ID as number!.");
+        //        return;
+        //    }
+
+        //    bool idFound = false;
+        //    // tìm id trùng với idFound cần edit thông tin
+        //    foreach (DataGridViewRow row in dataGridView1.Rows)
+        //    {
+        //        if (row.Cells["ColumnID"].Value != null && row.Cells["ColumnID"].Value.ToString() == id)
+        //        {
+        //            //edit lại thông tin của id đó
+        //            row.Cells["ColumnUser"].Value = user;
+        //            row.Cells["ColumnDate"].Value = date;
+        //            row.Cells["ColumnGender"].Value = gender;
+        //            row.Cells["ColumnFaculty"].Value = faculty;
+        //            row.Cells["ColumnPhone"].Value = tbPhone.Text;
+        //            row.Cells["ColumnAddress"].Value = tbAddress.Text;
+        //            row.Cells["ColumnImg"].Value = s;
+        //            idFound = true;
+        //        }
+        //    }
+
+        //    if (idFound)
+        //        MessageBox.Show("Update successfuly");
+        //    else
+        //        MessageBox.Show("The ID to edit does not exist.");
+        //}
         private void btEdit_Click(object sender, EventArgs e)
         {
             string id = txtID.Text;
@@ -116,33 +160,46 @@ namespace NgoPhuongLinh_2122110486
                 MessageBox.Show("There is no data to edit!");
                 return;
             }
+
             if (!IsNumeric(id))
             {
-                MessageBox.Show("Please enter ID as number!.");
+                MessageBox.Show("Please enter ID as a number.");
                 return;
             }
 
-            bool idFound = false;
-            // tìm id trùng với idFound cần edit thông tin
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            //kiểm tra id có trùng trong datagridview hay không
+            DataGridViewRow existingRow = dataGridView1.Rows
+                .Cast<DataGridViewRow>()
+                .FirstOrDefault(row => row.Cells["ColumnID"].Value?.ToString() == id);
+
+            if (existingRow != null)
             {
-                if (row.Cells["ColumnID"].Value != null && row.Cells["ColumnID"].Value.ToString() == id)
+                MessageBox.Show("ID already exists. Please enter a unique ID.");
+            }
+            else
+            {
+                // Find the row to edit
+                DataGridViewRow rowToEdit = dataGridView1.Rows
+                    .Cast<DataGridViewRow>()
+                    .FirstOrDefault(row => row.Cells["ColumnID"].Value?.ToString() == id);
+
+                if (rowToEdit != null)
                 {
-                    //edit lại thông tin của id đó
-                    row.Cells["ColumnUser"].Value = user;
-                    row.Cells["ColumnDate"].Value = date;
-                    row.Cells["ColumnGender"].Value = gender;
-                    row.Cells["ColumnFaculty"].Value = faculty;
-                    row.Cells["ColumnPhone"].Value = tbPhone.Text;
-                    row.Cells["ColumnAddress"].Value = tbAddress.Text;
-                    row.Cells["ColumnImg"].Value = s;
-                    idFound = true;
+                    rowToEdit.Cells["ColumnUser"].Value = user;
+                    rowToEdit.Cells["ColumnDate"].Value = date;
+                    rowToEdit.Cells["ColumnGender"].Value = gender;
+                    rowToEdit.Cells["ColumnFaculty"].Value = faculty;
+                    rowToEdit.Cells["ColumnPhone"].Value = tbPhone.Text;
+                    rowToEdit.Cells["ColumnAddress"].Value = tbAddress.Text;
+                    rowToEdit.Cells["ColumnImg"].Value = s;
+
+                    MessageBox.Show("Update successful");
+                }
+                else
+                {
+                    MessageBox.Show("The ID to edit does not exist.");
                 }
             }
-
-                MessageBox.Show("Update successful");
-            else
-                MessageBox.Show("ID cần chỉnh sửa không tồn tại.");
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -182,13 +239,45 @@ namespace NgoPhuongLinh_2122110486
         {
         }
 
+        //private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        //{
+
+        //    if (e.RowIndex >= 0)
+        //    {
+        //        dataGridView1.Rows[e.RowIndex].Selected = true;
+        //        DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+        //        txtUser.Text = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : "";
+        //        string gender = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "";
+        //        cbbFaculty.Text = row.Cells[4].Value != null ? row.Cells[4].Value.ToString() : "";
+        //        tbPhone.Text = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "";
+        //        tbAddress.Text = row.Cells[6].Value != null ? row.Cells[6].Value.ToString() : "";
+        //        pbImg.ImageLocation = row.Cells[7].Value.ToString();
+        //        if (gender == "Male")
+        //        {
+        //            rbMale.Checked = true;
+        //        }
+        //        else if (gender == "Female")
+        //        {
+        //            rbFemale.Checked = true;
+        //        }
+        //        else
+        //        {
+        //            rbMale.Checked = false;
+        //            rbFemale.Checked = false;
+        //        }
+        //    }
+        //}
+
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                txtID.Text = row.Cells[0].Value != null ? row.Cells[0].Value.ToString() : "";
                 txtUser.Text = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : "";
+                DateTime date = DateTime.Parse(row.Cells[2].Value.ToString());
+                dtpDate.Value = date;
                 string gender = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "";
                 if (gender == "Male")
                 {
@@ -203,7 +292,17 @@ namespace NgoPhuongLinh_2122110486
                     rbMale.Checked = false;
                     rbFemale.Checked = false;
                 }
+                cbbFaculty.Text = row.Cells[4].Value != null ? row.Cells[4].Value.ToString() : "";
+                tbPhone.Text = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "";
+                tbAddress.Text = row.Cells[6].Value != null ? row.Cells[6].Value.ToString() : "";
+                pbImg.ImageLocation = row.Cells[7].Value != null ? row.Cells[7].Value.ToString() : "";
+                
             }
+        }
+
+        private void pbImg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
