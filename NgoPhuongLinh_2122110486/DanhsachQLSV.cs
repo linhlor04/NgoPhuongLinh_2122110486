@@ -111,7 +111,6 @@ namespace NgoPhuongLinh_2122110486
             string faculty = cbbFaculty.Text;
             string gender = rbMale.Checked ? "Male" : "Female";
 
-
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(user) || string.IsNullOrEmpty(faculty))
             {
                 MessageBox.Show("There is no data to edit!");
@@ -141,7 +140,6 @@ namespace NgoPhuongLinh_2122110486
                 }
             }
 
-            if (idFound)
                 MessageBox.Show("Update successful");
             else
                 MessageBox.Show("ID cần chỉnh sửa không tồn tại.");
@@ -186,18 +184,12 @@ namespace NgoPhuongLinh_2122110486
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtID.Text = row.Cells[0].Value != null ? row.Cells[0].Value.ToString() : "";
                 txtUser.Text = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : "";
                 string gender = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "";
-                cbbFaculty.Text = row.Cells[4].Value != null ? row.Cells[4].Value.ToString() : "";
-                tbPhone.Text = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "";
-                tbAddress.Text = row.Cells[6].Value != null ? row.Cells[6].Value.ToString() : "";
-                pbImg.ImageLocation = row.Cells[7].Value.ToString();
                 if (gender == "Male")
                 {
                     rbMale.Checked = true;
